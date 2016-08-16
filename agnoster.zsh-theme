@@ -169,7 +169,6 @@ prompt_dir() {
 
  # are we within a git tree?
  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
- #prompt_segment blue black     $(git rev-parse --show-toplevel | sed -e "s|.*/\(.*/.*\)|\1|")"/"$(git rev-parse --show-prefix)
   prompt_segment blue black "➥ "$(git rev-parse --show-toplevel | sed -e "s|.*/\(.*\)|\1|")"/"$(git rev-parse --show-prefix)
  else
   prompt_segment blue black '%~'
